@@ -1,0 +1,13 @@
+{% extends "layout.html" %} {% block content %}
+<h3>{{title}}<small> (<a href="{{route}}/similar">Similar</a>)</small></h3> 
+
+<ul class="list-inline">
+{% for tag in tags %}
+<li><a href=''>#{{tag}}</a></li>
+{% endfor %}
+</ul>
+<hr>
+<a href="/user/{{author.id}}">{{author.name.first}} {{author.name.last}}</a>
+<div class="page-body">{% autoescape false %}{{ renderedContent }}{% endautoescape %}</div>
+<a href="{{route}}/edit" class="btn btn-primary">edit this page</a>
+<a href="{{route}}/delete" class="btn btn-danger">delete this page</a> {% endblock %}

@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <h3>Users</h3>
+  <hr>
+  <ul class="list-unstyled">
+    <!-- PLACEHOLDER LIST OF PAGES -->
+    {% for user in users %}
+
+    <li><a href="/user/{{user.id}}">{{user.name.first}} {{user.name.last}}</a> - {{user.email}}</li>
+    
+    {% endfor %}
+  </ul>
+{% endblock %}
